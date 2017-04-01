@@ -6,12 +6,16 @@ import Splash from "./Splash";
 import * as firebase from "firebase";
 
 class App extends Component {
+
   constructor(props){
     super(props);
     firebase.initializeApp({
       apiKey: "AIzaSyDQxCekxGbm0t9LdTwjGUD7PGJEYQYZ4pI",
       authDomain: "faight-d08d7.firebaseapp.com",
-      databaseURL: "https://faight-d08d7.firebaseio.com",
+      databaseURL: "https://faight-d08d7.firebaseio.com/",
+          projectId: "faight-d08d7",
+    storageBucket: "faight-d08d7.appspot.com",
+    messagingSenderId: "753989936035"
     });
     this.state = {
       signedIn: firebase.auth().currentUser,
@@ -40,9 +44,11 @@ class App extends Component {
     switch(this.state.signedIn){
       case false:
         view = <Login/>;
+        console.log("Login")
         break;
       case true:
-        view = <Splash/> 
+        view = <Splash/>; 
+        console.log("Splash")
         break;
     }
     return (

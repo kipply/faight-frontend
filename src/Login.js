@@ -11,8 +11,6 @@ export default class Login extends Component {
 		firebase.auth().signInWithPopup(provider)
 			.then()
 			.catch(function(error) {
-			console.log(error.code);
-			console.log(error.message);
 		});
 	}
 
