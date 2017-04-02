@@ -7,9 +7,6 @@
 .game{
     background-color:white;
 }
-.game-row {
-
-}
 .game-cell {
     display: inline-block;
     width: 50px;
@@ -30,4 +27,8 @@
     max-height: 70px;
     margin: 0 !important;
     padding: 0 !important;
+}
+
+.game-horizontal {
+    display: inline-block;
 }

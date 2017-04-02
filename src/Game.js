@@ -17,9 +17,6 @@ class Game extends Component {
             state.push(row);
         }
         this.state = {
-            game: {},
-            bot1: {},
-            bot2: {},
             history: [],
             board: state,
         };
@@ -59,11 +56,20 @@ class Game extends Component {
 
     onAiMove = (move) => {
         if (move.message.substring(0, 3) === "col") {
-            this.playMove(move.message.substr(4), move.bot == 0 ? 'X' : 'O');
+            this.playMove(move.message.substr(4), move.bot == 1 ? 'X' : 'O');
         } else if (move.message === "Winner") {
             alert("Winner");
+            this.state = {
+                history: [],
+                board: this.state.board.slice(),
+            };
         } else {
-            console.log("WTF IS THIS", move);
+            let history = this.state.history.slice();
+            history.push(move);
+            this.setState({
+                ...this.state,
+                history: history
+            });
         }
     }
 
@@ -89,11 +95,11 @@ class Game extends Component {
     render() {
         return (
             <div className="game">
-                <Board rows={this.state.rows} columns={this.state.columns} board={this.state.board} />
-                <MakeMatch setGame={this.setGame} />
-
-                <History history={this.state.history} />
-
+                <div className="game-horizontal">
+                    <Board rows={this.state.rows} columns={this.state.columns} board={this.state.board} />
+                    <History history={this.state.history} />
+                </div>
+                {this.state.game == undefined ? <MakeMatch setGame={this.setGame} /> : <h2>Game in progress</h2>}
             </div>
         );
     }
