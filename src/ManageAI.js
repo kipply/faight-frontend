@@ -4,7 +4,7 @@ import './ManageAI.css';
 import './Components.css';
 
 export default class Documents extends Component {
-	constructor(props){
+	constructor(props) {
 		super(props);
 		this.state = {
 			ais: []
@@ -13,9 +13,11 @@ export default class Documents extends Component {
 		let ctx = this;
 		firebase.database().ref('/users/' + uid).once('value').then(function(snapshot) {
 			ctx.setState({ ais: snapshot.val() });
-		});	}
+		});
+    }
+
 	newAI(){
-  		firebase.database().ref("users/"+firebase.auth().currentUser.uid + "/ai").push().set({
+  		firebase.database().ref("/users/" + firebase.auth().currentUser.uid + "/ai").push().set({
   			    username: "NTHTH"
   		})
 	}

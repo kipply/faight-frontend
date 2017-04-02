@@ -1,0 +1,26 @@
+.button{
+    padding:1em 2em;
+    transition:all 200ms;
+    border-style:none;
+    background:#FF5722;
+    display:inline-block;
+    color:#FFF;
+    border-color: #212121;
+    font-size:0.8em;
+    font-family: 'Lato', sans-serif;
+    font-weight:400;
+    letter-spacing:0.1em;
+    cursor:pointer;
+}
+.button span{
+    vertical-align:middle;
+    margin-left:0.5em;
+}
+.button:hover{
+    background: #FF8A65; 
+    transition: background 1s;
+}
+.container{
+    max-width:800px;
+    margin:0 auto;
+}

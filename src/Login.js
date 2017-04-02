@@ -15,9 +15,7 @@ export default class Login extends Component {
 
 	render () {
 		return (
-			<div className="login">
-				<h1>FAIght</h1>
-				<h5>Pokemon Showdown but with Connect Four but with user submitted AI and it's also kind of like DMOJ<sup>TM</sup></h5>	
+			<div className="Login">
 				<button type="submit" onClick={this.handleClick()} className="button"><Google /><span> LOGIN WITH GOOGLE</span></button>
 			</div>
 		)

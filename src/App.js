@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './icon.png';
 import './App.css';
 import Login from "./Login";
 import Splash from "./Splash";
@@ -58,7 +58,7 @@ class App extends Component {
             <div className="App">
                 <div className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
-                    <h2>FAIght</h2>
+                    <h2>F<span className="blue">AI</span>GHT</h2>
                 </div>
                 {view}
             </div>
