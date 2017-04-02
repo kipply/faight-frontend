@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import * as firebase from "firebase";
 import Search from "./Search";
 import ManageAI from "./ManageAI";
+import MakeMatch from "./MakeMatch";
 import Board from "./Board";
 import Logout from "./Logout";
 import './Components.css';
