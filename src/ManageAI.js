@@ -16,10 +16,10 @@ export default class Documents extends Component {
 		});
     }
 
-	newAI(){
+	newAI() {
   		firebase.database().ref("/users/" + firebase.auth().currentUser.uid + "/ai").push().set({
   			    username: "NTHTH"
-  		})
+  		});
 	}
 	render() {
 		const {load} = this.props;
