@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import * as firebase from "firebase";
 import Search from "./Search";
 import ManageAI from "./ManageAI";
+import MakeMatch from "./MakeMatch";
 import Logout from "./Logout";
 import './Components.css';
 import './Splash.css';
@@ -16,7 +17,6 @@ class Splash extends Component {
     showManageAI = () => {
         this.setState({
             showManageAI: true, 
-
         }); 
     }
 
@@ -32,7 +32,7 @@ class Splash extends Component {
                     <ManageAI /> :
                     null
                 }
-
+                <MakeMatch />
             </div>	
 
         );

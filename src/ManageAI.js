@@ -5,7 +5,7 @@ import './Components.css';
 import Editor from "./Editor";
 
 export default class Documents extends Component {
-	constructor(props){
+	constructor(props) {
 		super(props);
 		this.state = {
 			ais: [],
