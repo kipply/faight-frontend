@@ -21,7 +21,6 @@ export default class Documents extends Component {
 	newAI = () => {
 		this.setState({
             showEditor: true, 
-
         }); 
 	}
 	render() {
