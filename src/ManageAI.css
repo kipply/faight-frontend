@@ -1,0 +1,12 @@
+.ManageAI{
+	background-color: white;
+	width: 100%; 
+	margin: 0; 	
+	padding:10px;
+}
+.ManageAI h2{
+	color: #FF5722;
+}
+.ManageAI .boop{
+	color: #212121;
+}

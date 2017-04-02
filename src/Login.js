@@ -7,7 +7,7 @@ import Google from "react-icons/lib/fa/google";
 export default class Login extends Component {
 	handleClick = () => {
 		var provider = new firebase.auth.GoogleAuthProvider();
-		firebase.auth().signInWithPopup(provider)
+		firebase.auth().signInWithRedirect(provider)
 			.then()
 			.catch(function(error) {
 		});

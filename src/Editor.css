@@ -1,0 +1,17 @@
+.Editor{
+	max-width: 100vw;
+}
+ace{
+	max-width: 80vw;
+	margin: 0 auto;
+	height: 20px;
+	border: 2pt black;
+}
+html{
+	width: 100%;
+	overflow-x: hidden;
+}
+.selector{
+	color: black!important;
+	background-color: blue!important;
+}

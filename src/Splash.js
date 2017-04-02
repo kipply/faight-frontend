@@ -15,7 +15,7 @@ class Splash extends Component {
     }
     showManageAI = () => {
         this.setState({
-            showMangeAI: true, 
+            showManageAI: true, 
 
         }); 
     }
@@ -26,14 +26,15 @@ class Splash extends Component {
                 <a className="button" onClick={this.showManageAI}>
                     [Manage AIs] 
                 </a>
-                                            <Logout />
-
+                <Logout />
+                
                 {this.state.showManageAI ?
                     <ManageAI /> :
                     null
                 }
 
             </div>	
+
         );
 	}
 }
