@@ -51,7 +51,8 @@ export default class Documents extends Component {
 		  { value: 'python', label: 'Python 3' },
 		  { value: 'javascript', label: 'JavaScript' },
 		  { value: 'lua', label: 'Lua' },
-		  { value: 'cpp', label: 'C++' }
+		  { value: 'cpp', label: 'C++' },
+		  { value: 'bf', label: 'BrainF**k' }
 		];
 		
 		const {load} = this.props;
@@ -64,15 +65,38 @@ export default class Documents extends Component {
 				className="ace"
 				onChange={this.onChange}
 				value={this.state.code}
-				height="500px"
-				width="500px"
+				height="200px"
+				width="95%"
 				/>
 				<Select
-				  name="form-field-name"
+					className="selector" 
 				  value={selectValue}
 				  options={options}
 				  onChange={this.logChange}
-				/>
+				/>	
+				<span>
+				You need to write an AI to play the connect-4 game. At the beginning of the game, you are presented with a board with 6 rows an d 7 columns. Your program needs to determine the 1-indexed column IDs based on a given board. 
+<br/>
+<br/>
+
+At the very beginning of the game, you will read one integer: either 1 or 2. This indicates the player-id of your bot. 
+<br/>
+Then, for each round, you are given the current board placement, with 6 lines, and 7 characters each. The character will either be 0, 1, or 2. <br/>
+0 - Empty Spot
+1 - Player 1
+2 - Player 2
+<br/>
+<br/>
+In each round, your program needs to output one single integer in the range of 1 to 7, indicating the column ID that your AI would like to place the puck. 
+<br/>
+<br/>
+You must not: <br/>
+- Output an invalid column ID<br/>
+- Place puck into a column that is already full, or<br/>
+- Output anything else other than the one integer required.
+<br/><br/>
+Violation of any of the above-mentioned protocols will result in immediate termination of your AI.		
+				</span>
 
 			</div>
 

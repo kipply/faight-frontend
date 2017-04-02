@@ -2,19 +2,23 @@
   "name": "faight",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001",
+  "proxy": "http://10.188.16.128:3001",
   "devDependencies": {
     "react-scripts": "0.9.5"
   },
   "dependencies": {
     "brace": "^0.10.0",
+    "chart.js": "^1.1.1",
+    "chartjs": "^0.3.24",
     "firebase": "^3.7.4",
     "react": "^15.4.2",
     "react-ace": "^4.1.6",
+    "react-chartjs": "^0.8.0",
     "react-dom": "^15.4.2",
     "react-dropdown": "^1.2.1",
     "react-icons": "^2.2.3",
-    "react-select": "^1.0.0-rc.3"
+    "react-select": "^1.0.0-rc.3",
+    "recharts": "^0.21.2"
   },
   "scripts": {
     "start": "react-scripts start",

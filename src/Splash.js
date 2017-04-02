@@ -3,6 +3,7 @@ import * as firebase from "firebase";
 import Search from "./Search";
 import ManageAI from "./ManageAI";
 import Game from "./Game";
+import Charts from "./Charts";
 import Logout from "./Logout";
 import './Components.css';
 import './Splash.css';
@@ -13,18 +14,29 @@ class Splash extends Component {
         this.state = {
             showManageAI: false, 
             showGame: false, 
+            showCharts: true
         }
     }
+
     showManageAI = () => {
         this.setState({
             showGame: false, 
+            showCharts: false,
             showManageAI: true, 
         }); 
     }
     showGame = () => {
         this.setState({
             showManageAI: false,
+            showCharts: false,
             showGame: true, 
+        }); 
+    }
+    returnSplash = () => {
+        this.setState({
+            showManageAI: false,
+            showCharts: true,
+            showGame: false, 
         }); 
     }
 
@@ -32,6 +44,9 @@ class Splash extends Component {
 		return (
             <div className="body">
                 <div className="Splash">
+                    <a className="button" onClick={this.returnSplash}>
+                        [Home] 
+                    </a>
                     <a className="button" onClick={this.showManageAI}>
                         [Manage AIs] 
                     </a>
@@ -40,7 +55,11 @@ class Splash extends Component {
                         [Play!] 
                     </a>
                     <Logout />
-                    
+                       
+                    {this.state.showCharts ?
+                        <Charts /> :
+                        null
+                    }          
                     {this.state.showManageAI ?
                         <ManageAI /> :
                         null
