@@ -48,7 +48,7 @@ class Splash extends Component {
                         [Home] 
                     </a>
                     <a className="button" onClick={this.showManageAI}>
-                        [Manage AIs] 
+                        [My AI] 
                     </a>
 
                     <a className="button" onClick={this.showGame}>
