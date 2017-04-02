@@ -58,22 +58,9 @@ export default class Documents extends Component {
 		const {load} = this.props;
 		const {selectValue} = this.state;
 		return (
+
 			<div className="Editor">
-				<AceEditor
-				mode="java"
-				theme="chrome"
-				className="ace"
-				onChange={this.onChange}
-				value={this.state.code}
-				height="200px"
-				width="95%"
-				/>
-				<Select
-					className="selector" 
-				  value={selectValue}
-				  options={options}
-				  onChange={this.logChange}
-				/>	
+			
 				<span>
 				You need to write an AI to play the connect-4 game. At the beginning of the game, you are presented with a board with 6 rows an d 7 columns. Your program needs to determine the 1-indexed column IDs based on a given board. 
 <br/>
@@ -98,6 +85,21 @@ You must not: <br/>
 Violation of any of the above-mentioned protocols will result in immediate termination of your AI.		
 				</span>
 
+				<AceEditor
+				mode="java"
+				theme="chrome"
+				className="ace"
+				onChange={this.onChange}
+				value={this.state.code}
+				height="200px"
+				width="95%"
+				/>
+				<Select
+					className="selector" 
+				  value={selectValue}
+				  options={options}
+				  onChange={this.logChange}
+				/>	
 			</div>
 
 		)
