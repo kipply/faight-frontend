@@ -5,22 +5,9 @@ body {
 }
 
 .game-board {
-
 }
 .game-row {
 
-}
-.game-row .game-cell {
-    border-top: solid black 1px;
-}
-.game-row:last-child .game-cell {
-    border-bottom: solid black 1px;
-}
-.game-row .game-cell:first-child {
-    border-left: solid black 1px;
-}
-.game-row .game-cell {
-    border-right: solid black 1px;
 }
 .game-cell {
     display: inline-block;
@@ -29,4 +16,10 @@ body {
     text-align: center;
     vertical-align: center;
     line-height: 50px;
+    background-color: blue;
+    padding: 5px;
+}
+.cell-inner {
+    border-radius: 100px;
+    background-color: white;
 }

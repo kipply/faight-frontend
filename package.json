@@ -2,12 +2,15 @@
   "name": "faight",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3001",
   "devDependencies": {
     "react-scripts": "0.9.5"
   },
   "dependencies": {
+    "firebase": "^3.7.4",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-icons": "^2.2.3"
   },
   "scripts": {
     "start": "react-scripts start",
