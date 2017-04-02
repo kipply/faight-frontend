@@ -20,6 +20,7 @@ class MakeMatch extends Component {
             ...this.state,
             history: history
         });
+        this.props.onMove(move);
     }
 
     setGame(game) {
