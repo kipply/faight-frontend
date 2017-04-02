@@ -27,8 +27,9 @@ class Splash extends Component {
                     <a className="button" onClick={this.showManageAI}>
                         [Manage AIs] 
                     </a>
-                                                <Logout />
-
+                    <MakeMatch />
+                    <Logout />
+                    
                     {this.state.showManageAI ?
                         <ManageAI /> :
                         null
