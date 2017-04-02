@@ -13,7 +13,7 @@ class BoardCell extends Component {
         return (
             <div className="game-cell">
                 <div className="cell-inner" style={color}>
-                    X
+                    
                 </div>
             </div>
         );

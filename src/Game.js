@@ -89,9 +89,11 @@ class Game extends Component {
     render() {
         return (
             <div className="game">
-                <MakeMatch setGame={this.setGame} />
                 <Board rows={this.state.rows} columns={this.state.columns} board={this.state.board} />
+                <MakeMatch setGame={this.setGame} />
+
                 <History history={this.state.history} />
+
             </div>
         );
     }

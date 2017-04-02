@@ -29,7 +29,6 @@ export default class Documents extends Component {
 			<div className="ManageAI">
 				<h2>Your AI</h2>
                 <Editor/>
-				<Board/>
 			</div>
 		)
 	}

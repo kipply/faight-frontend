@@ -1,4 +1,11 @@
 .game-board {
+        background-color: white;
+    width: 100%; 
+    margin: 0;  
+    padding:15px;
+}
+.game{
+    background-color:white;
 }
 .game-row {
 
@@ -10,11 +17,19 @@
     text-align: center;
     vertical-align: center;
     line-height: 50px;
-    background-color: blue;
-    padding: 5px;
+    background-color: #FF9800;
+    padding: 10px;
 }
 .cell-inner {
     border-radius: 100px;
     background-color: white;
+    min-height: 50px;
+    border-width: 5pt;
 }
 
+.game-row{
+    position: relative;
+    top: -10px;
+    margin: 0 !important;
+    padding: 0 !important;
+}
