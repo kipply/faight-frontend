@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import * as firebase from "firebase";
 import Search from "./Search";
 import ManageAI from "./ManageAI";
+import MakeMatch from "./MakeMatch";
 
 class Splash extends Component {
     constructor(props) {
@@ -13,7 +14,6 @@ class Splash extends Component {
     handleClick = () => {
         this.setState({
             showComponent: true, 
-
         }); 
     }
 
@@ -29,6 +29,7 @@ class Splash extends Component {
                     <ManageAI /> :
                     null
                 }
+                <MakeMatch />
             </div>	
         );
 	}
