@@ -21,7 +21,7 @@ export default class Documents extends Component {
 			console.log(ctx.state.code);
 		});	
 		this.state = {	  	
-			optionValue: null,
+			selectValue: null,
 		}
 	}
 
