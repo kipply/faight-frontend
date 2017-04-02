@@ -33,7 +33,7 @@ class Game extends Component {
             ...this.state,
             history: history
         });
-        this.onMove(move);
+        this.onAiMove(move);
     }
 
     setGame = (game) => {
