@@ -23,6 +23,10 @@ export default class Documents extends Component {
 			console.log(ctx.state.code);
 		});	
 
+
+		this.state = {	  	
+			optionValue: null,
+		}
 	}
 
 	state = {
@@ -53,6 +57,8 @@ export default class Documents extends Component {
 		  { value: 'lua', label: 'Lua' },
 		  { value: 'cpp', label: 'C++' }
 		];
+				const {load} = this.props;
+
 		const {selectValue} = this.state;
 		return (
 			<div className="Editor">
