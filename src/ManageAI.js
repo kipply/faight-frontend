@@ -28,13 +28,7 @@ export default class Documents extends Component {
 		return (
 			<div className="ManageAI">
 				<h2>Your AI</h2>
-				<a className="button" onClick={this.newAI}>
-				Edit</a>
-
-                {this.state.showEditor ?
-                    <Editor/> :
-                    null
-                }
+                <Editor/>
 			</div>
 		)
 	}

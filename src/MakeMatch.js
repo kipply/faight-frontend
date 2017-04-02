@@ -21,7 +21,7 @@ class MakeMatch extends Component {
     
     render() {
         return (
-            <button type="submit" onClick={this.handleClick} className="button">Make Match</button>
+            <a type="submit" onClick={this.handleClick} className="button">[Make Match]</a>
         );
     }
 }

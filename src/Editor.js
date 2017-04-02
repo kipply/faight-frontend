@@ -13,26 +13,25 @@ import 'brace/theme/chrome';
 export default class Documents extends Component {
 	constructor(props){
 		super(props);
-
+		this.state = {	  	
+			code: null
+		}
 		const uid = firebase.auth().currentUser.uid;
 		let ctx = this;
+		firebase.database().ref('/users/' + uid + '/ai/code').once('value').then(function(snapshot) {
+			ctx.setState({ code: snapshot.val() });
+			console.log(ctx.state.code);
+		});	
 
-		this.state = {	  	
-			optionValue: null,
-		}
 	}
 
 	state = {
-		selectValue: "one"
-		starCountRef = firebase.database().ref("users/"+firebase.auth().currentUser.uid + "/ai/");
-		starCountRef.on('value', function(snapshot) {
-		  updateStarCount(postElement, snapshot.val());
-});
+		selectValue: "python"
 	};
-  	console.log(this.oldCode);
+  
 	onChange = (newValue) =>{
 		firebase.database().ref("users/"+firebase.auth().currentUser.uid + "/ai").set({
-			code: newValue,
+			code: newValue, 
 		})
 	}
 	
@@ -41,6 +40,10 @@ export default class Documents extends Component {
 	  this.setState({
 	  	selectValue: val.value
 	  });
+		// firebase.database().ref("users/"+firebase.auth().currentUser.uid + "/ai").set({
+		// 	lang: val.value
+		// })
+
 	}
 	render() {
 
@@ -50,16 +53,14 @@ export default class Documents extends Component {
 		  { value: 'lua', label: 'Lua' },
 		  { value: 'cpp', label: 'C++' }
 		];
-		
-		const {load} = this.props;
 		const {selectValue} = this.state;
 		return (
 			<div className="Editor">
 				<AceEditor
 				mode="java"
-				value={oldCode}
 				theme="chrome"
 				className="ace"
+				value={this.state.code}
 				onChange={this.onChange}
 				height="500px"
 				width="500px"
