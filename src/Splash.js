@@ -16,7 +16,7 @@ class Splash extends Component {
     }
     showManageAI = () => {
         this.setState({
-            showMangeAI: true, 
+            showManageAI: true, 
         }); 
     }
 
