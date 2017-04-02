@@ -3,6 +3,7 @@ import * as firebase from "firebase";
 import Search from "./Search";
 import ManageAI from "./ManageAI";
 import MakeMatch from "./MakeMatch";
+import Board from "./Board";
 import Logout from "./Logout";
 import './Components.css';
 import './Splash.css';
@@ -22,19 +23,21 @@ class Splash extends Component {
 
     render() {
 		return (
-            <div className="Splash">
-                <a className="button" onClick={this.showManageAI}>
-                    [Manage AIs] 
-                </a>
-                <MakeMatch />
-                <Logout />
-                
-                {this.state.showManageAI ?
-                    <ManageAI /> :
-                    null
-                }
-            </div>	
-
+            <div className="body">
+                <div className="Splash">
+                    <a className="button" onClick={this.showManageAI}>
+                        [Manage AIs] 
+                    </a>
+                    <MakeMatch />
+                    <Logout />
+                    
+                    {this.state.showManageAI ?
+                        <ManageAI /> :
+                        null
+                    }
+                </div>
+                <Board rows="6" columns="7" />
+            </div>
         );
 	}
 }
