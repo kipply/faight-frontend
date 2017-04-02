@@ -13,42 +13,38 @@ import 'brace/theme/chrome';
 export default class Documents extends Component {
 	constructor(props){
 		super(props);
-		this.state = {	  	
-			code: null
-		}
+
 		const uid = firebase.auth().currentUser.uid;
 		let ctx = this;
 		firebase.database().ref('/users/' + uid + '/ai/code').once('value').then(function(snapshot) {
 			ctx.setState({ code: snapshot.val() });
 			console.log(ctx.state.code);
 		});	
-
-
 		this.state = {	  	
 			optionValue: null,
 		}
 	}
 
 	state = {
-		selectValue: "python"
-	};
-  
+		selectValue: "one"
+		}; 
+	
 	onChange = (newValue) =>{
-		firebase.database().ref("users/"+firebase.auth().currentUser.uid + "/ai").set({
-			code: newValue, 
-		})
-	}
+
+	   var updates = {};
+	  updates["/code/"] = newValue;
+		firebase.database().ref("users/"+firebase.auth().currentUser.uid + "/ai").update(updates)
+	}; 
 	
 	logChange = (val) => {
-	  console.log("Selected: " + val.value);
 	  this.setState({
 	  	selectValue: val.value
 	  });
-		// firebase.database().ref("users/"+firebase.auth().currentUser.uid + "/ai").set({
-		// 	lang: val.value
-		// })
+	   var updates = {};
+	  updates["/lang/"] = val.value;
 
-	}
+	  firebase.database().ref("users/"+firebase.auth().currentUser.uid + "/ai").update(updates)
+	}; 
 	render() {
 
 		const options = [
@@ -57,8 +53,8 @@ export default class Documents extends Component {
 		  { value: 'lua', label: 'Lua' },
 		  { value: 'cpp', label: 'C++' }
 		];
-				const {load} = this.props;
-
+		
+		const {load} = this.props;
 		const {selectValue} = this.state;
 		return (
 			<div className="Editor">
@@ -66,8 +62,8 @@ export default class Documents extends Component {
 				mode="java"
 				theme="chrome"
 				className="ace"
-				value={this.state.code}
 				onChange={this.onChange}
+				value={this.state.code}
 				height="500px"
 				width="500px"
 				/>
