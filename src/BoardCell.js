@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 
 class BoardCell extends Component {
-    onMove = () => {
-        this.props.onMove(this.props.id, "O");
-    }
-
     render() {
         let color = {
             backgroundColor: 'white'
@@ -15,7 +11,7 @@ class BoardCell extends Component {
             color.backgroundColor = 'yellow';
         }
         return (
-            <div className="game-cell" onClick={this.onMove}>
+            <div className="game-cell">
                 <div className="cell-inner" style={color}>
                     X
                 </div>

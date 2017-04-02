@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import * as firebase from "firebase";
 import Search from "./Search";
 import ManageAI from "./ManageAI";
-import MakeMatch from "./MakeMatch";
-import Board from "./Board";
+import Game from "./Game";
 import Logout from "./Logout";
 import './Components.css';
 import './Splash.css';
@@ -28,7 +27,6 @@ class Splash extends Component {
                     <a className="button" onClick={this.showManageAI}>
                         [Manage AIs] 
                     </a>
-                    <MakeMatch />
                     <Logout />
                     
                     {this.state.showManageAI ?
@@ -36,7 +34,7 @@ class Splash extends Component {
                         null
                     }
                 </div>
-                <Board rows="6" columns="7" />
+                <Game rows="6" columns="7" />
             </div>
         );
 	}
