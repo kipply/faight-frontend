@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import BoardRow from './BoardRow';
+import './Board.css';
 
 class Board extends Component {
     constructor(props) {
